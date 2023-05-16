@@ -7,13 +7,13 @@ import Message from './Message';
 import { ArrowDownCircleIcon } from '@heroicons/react/24/outline';
 
 type Props = {
-    chatId: string;
+  chatId: string;
 }
 
 const Chat = ({chatId}: Props) => {
   const {data:session}=useSession()
   const [messages]=useCollection(session && query(
-    collection(db,'users',session?.user?.email!, 'chats',chatId, 'messages'),
+    collection(db,'users',session?.user?.email!, 'chats', chatId,'messages'),
     orderBy("createdAt", "asc")
   ))
   

@@ -7,7 +7,7 @@ import {useCollection} from "react-firebase-hooks/firestore"
 import ChatRow from "./ChatRow";
 import ModelSelection from "./ModelSelection";
 import { ArrowLeftOnRectangleIcon } from "@heroicons/react/24/outline";
-
+import Image from 'next/image';
 const SideBar = () => {
   const {data:session} = useSession();
   const [chats, loading, error]=useCollection(
@@ -40,7 +40,8 @@ const SideBar = () => {
         {session && (
           <>
           <div className="flex rounded-md justify-between items-center p-2 hover:bg-[#343541]">
-          <img src={session.user?.image!} alt={session.user?.name!} 
+          <Image src={session.user?.image!} alt={session.user?.name!}  width={8}
+      height={8}
           className="h-8 w-8 rounded-md cursor-pointer hover: opacity-50" />
           <p className="text-white hidden md:inline-flex truncate">{session.user?.name}</p>
           <button onClick={handleLogout}>

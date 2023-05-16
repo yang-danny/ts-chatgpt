@@ -18,7 +18,7 @@ export default async function RootLayout({
       <title>ChatGPT TypeScript</title>
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
       <link rel="icon" href="/favicon.ico" />
-      <body >
+      <body  suppressHydrationWarning={true} >
         <SessionProvider session={session}>
         {!session ? (<Login/>):(
         <div className="flex">
