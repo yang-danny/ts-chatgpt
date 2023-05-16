@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'export',
     reactStrictMode: true,
     images: {
         domains: ['links.papareact.com'],
@@ -18,6 +17,7 @@ const nextConfig = {
     experimental: {
         appDir:true,
     },
+    assetPrefix: './',
 }
 
-module.exports = nextConfig
+export default nextConfig
