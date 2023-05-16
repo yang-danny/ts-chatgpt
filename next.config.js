@@ -17,7 +17,6 @@ const nextConfig = {
     experimental: {
         appDir:true,
     },
-    assetPrefix: './',
 }
 
-export default nextConfig
+exports = nextConfig
